@@ -22,7 +22,7 @@ export const APP_CONFIG = {
   author: process.env.NEXT_PUBLIC_AUTHOR_NAME || "Abhijith",
   githubUrl:
     process.env.NEXT_PUBLIC_GITHUB_URL ||
-    "https://github.com/abhijith/f1-race-analytics-platform",
+    "https://github.com/AbhijithM714/F1_Driver_Analysis",
   liveDemoUrl:
     process.env.NEXT_PUBLIC_LIVE_DEMO_URL ||
     "https://f1-race-analytics.vercel.app",

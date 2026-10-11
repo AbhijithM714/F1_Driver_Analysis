@@ -251,7 +251,7 @@ f1-race-analytics-platform/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/abhijith/f1-race-analytics-platform.git
+git clone https://github.com/AbhijithM714/F1_Driver_Analysis.git
 cd f1-race-analytics-platform
 ```
 

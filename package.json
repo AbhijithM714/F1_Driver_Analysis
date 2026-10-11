@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abhijith/f1-race-analytics-platform.git"
+    "url": "https://github.com/AbhijithM714/F1_Driver_Analysis.git"
   },
   "dependencies": {
     "clsx": "^2.1.1",
