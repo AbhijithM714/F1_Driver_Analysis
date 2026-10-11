@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  f1-race-analytics:
+    container_name: f1-race-analytics-platform
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - APP_NAME=Formula 1 Race Analytics Platform
+      - APP_VERSION=1.0.0
+      - NEXT_PUBLIC_BASE_URL=http://localhost:3000
+      - NEXT_PUBLIC_API_URL=/api
+      - DATA_DIRECTORY=/app/data
+    volumes:
+      - ./data:/app/data:ro
+    restart: unless-stopped
+
