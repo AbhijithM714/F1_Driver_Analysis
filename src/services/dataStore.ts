@@ -12,17 +12,27 @@ import fs from "fs";
 import path from "path";
 import Papa from "papaparse";
 
-const rawDataDir = process.env.DATA_DIRECTORY || "data";
-export const DATA_DIR = path.isAbsolute(rawDataDir)
-  ? rawDataDir
-  : path.join(process.cwd(), rawDataDir);
+// Statically traceable default data directory for Next.js / Vercel / Netlify serverless bundling
+const DEFAULT_DATA_DIR = path.join(process.cwd(), "data");
+
+export const DATA_DIR = process.env.DATA_DIRECTORY
+  ? path.isAbsolute(process.env.DATA_DIRECTORY)
+    ? process.env.DATA_DIRECTORY
+    : path.join(process.cwd(), process.env.DATA_DIRECTORY)
+  : DEFAULT_DATA_DIR;
+
 const REVALIDATE_MS = 1500;
 
 /**
- * Resolves a filename inside DATA_DIR while strictly preventing path traversal.
+ * Resolves a filename inside DATA_DIR while strictly preventing path traversal
+ * and preserving Next.js Output File Tracing compatibility.
  */
 export function safeDataPath(file: string): string {
   const sanitized = path.basename(file);
+  const candidate = path.join(DEFAULT_DATA_DIR, sanitized);
+  if (!process.env.DATA_DIRECTORY || process.env.DATA_DIRECTORY === "data") {
+    return candidate;
+  }
   const resolved = path.resolve(DATA_DIR, sanitized);
   const baseResolved = path.resolve(DATA_DIR);
   if (!resolved.startsWith(baseResolved)) {

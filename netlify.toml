@@ -6,3 +6,5 @@
   NODE_VERSION = "20"
   NEXT_TELEMETRY_DISABLED = "1"
 
+[functions]
+  included_files = ["data/**"]
