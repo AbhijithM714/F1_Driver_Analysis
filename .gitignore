@@ -1,0 +1,44 @@
+# Dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing & Coverage
+/coverage
+
+# Next.js Build Output
+/.next/
+/out/
+
+# Production Build
+/build
+
+# Environment Variables (Never commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs & Diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# OS & Editor Artifacts
+.DS_Store
+*.pem
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript Incremental Build Info
+*.tsbuildinfo
+next-env.d.ts
+
+# FastF1 Local Python Cache
+/fastf1_cache/
+
+
