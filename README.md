@@ -41,7 +41,7 @@ All application screenshots are organized in [`./screenshots/`](./screenshots/RE
 
 | Module | Route | Screenshot Reference |
 |---|---|---|
-| **Home (Faculty Demo Mode)** | `/` | [`screenshots/01-home.png`](./screenshots/01-home.png) |
+| **Home** | `/` | [`screenshots/01-home.png`](./screenshots/01-home.png) |
 | **Telemetry Dashboard** | `/dashboard` | [`screenshots/02-dashboard.png`](./screenshots/02-dashboard.png) |
 | **Drivers Directory** | `/drivers` | [`screenshots/03-drivers.png`](./screenshots/03-drivers.png) |
 | **Driver Career Profile** | `/drivers/[id]` | [`screenshots/04-driver-profile.png`](./screenshots/04-driver-profile.png) |
