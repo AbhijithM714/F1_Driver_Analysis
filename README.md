@@ -361,4 +361,4 @@ All 16 core and supplementary datasets are pre-installed in `./data` and automat
 
 **Abhijith**  
 - **Project**: Formula 1 Race Analytics Platform (Version 1.0.0)
-- **GitHub**: [https://github.com/abhijith/f1-race-analytics-platform](https://github.com/abhijith/f1-race-analytics-platform)
+- **GitHub**: [https://github.com/AbhijithM714/F1_Driver_Analysis](https://github.com/AbhijithM714/F1_Driver_Analysis)
