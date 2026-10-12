@@ -29,6 +29,7 @@ export interface DriverRecord {
   firstYear?: number | null;
   lastYear?: number | null;
   seasons?: number[];
+  imageUrl?: string | null;
 }
 
 export interface ConstructorRecord {

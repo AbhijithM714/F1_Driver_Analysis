@@ -16,7 +16,7 @@
 
 ## 🌐 Live Demo
 
-- **Production Live Demo**: [https://f1-driver-analysis.vercel.app](https://f1-driver-analysis.vercel.app)
+- **Production Live Demo**: [https://f1-driver-analysis.vercel.app/](https://f1-driver-analysis.vercel.app/)
 - **Architecture Specification**: [`architecture/SYSTEM_ARCHITECTURE.md`](./architecture/SYSTEM_ARCHITECTURE.md)
 - **Deployment Guide**: [`docs/DEPLOYMENT_GUIDE.md`](./docs/DEPLOYMENT_GUIDE.md)
 

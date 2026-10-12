@@ -385,54 +385,86 @@ export default function DriverProfilePage() {
           </div>
 
           <div className="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div className="space-y-3">
-              {/* Top Badges */}
-              <div className="flex flex-wrap items-center gap-2.5">
-                <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-700 text-white shadow-sm flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full" style={{ backgroundColor: driver.teamColor }} />
-                  {driver.code}
-                </span>
-
-                {driver.number && (
-                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-900/90 border border-zinc-800 text-zinc-200">
-                    PERMANENT CAR #{driver.number}
-                  </span>
-                )}
-
-                <span className="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900/90 border border-zinc-800 text-zinc-300 flex items-center gap-1.5">
-                  <span className="text-base leading-none">{driver.flag}</span>
-                  <span>{driver.nationality}</span>
-                </span>
-
-                {driver.isCurrentGrid && (
-                  <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase bg-red-950/80 text-red-400 border border-red-800">
-                    ACTIVE 2024 GRID
-                  </span>
-                )}
-
-                {Boolean(driver.stats?.titles && driver.stats.titles > 0) && (
-                  <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold flex items-center gap-1">
-                    <Trophy className="w-3 h-3" />
-                    {driver.stats.titles}x WORLD CHAMPION
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+              {/* Driver Official Portrait Frame */}
+              <div
+                className="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl bg-zinc-900/90 border-2 overflow-hidden shrink-0 flex items-center justify-center shadow-2xl"
+                style={{ borderColor: driver.teamColor || "#E10600" }}
+              >
+                <div
+                  className="absolute inset-0 opacity-25 pointer-events-none"
+                  style={{
+                    background: `radial-gradient(circle at top, ${driver.teamColor || "#E10600"}, transparent 75%)`,
+                  }}
+                />
+                {driver.imageUrl ? (
+                  <img
+                    src={driver.imageUrl}
+                    alt={driver.fullName}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                    }}
+                    className="relative z-10 w-full h-full object-cover object-top scale-110"
+                  />
+                ) : (
+                  <span
+                    className="relative z-10 font-mono text-2xl font-black tracking-tighter"
+                    style={{ color: driver.teamColor || "#E10600" }}
+                  >
+                    {driver.number ? `#${driver.number}` : driver.code}
                   </span>
                 )}
               </div>
 
-              {/* Driver Full Name */}
-              <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
-                {driver.fullName}
-              </h1>
+              <div className="space-y-3">
+                {/* Top Badges */}
+                <div className="flex flex-wrap items-center gap-2.5">
+                  <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-zinc-900 border border-zinc-700 text-white shadow-sm flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full" style={{ backgroundColor: driver.teamColor }} />
+                    {driver.code}
+                  </span>
 
-              {/* Team Association */}
-              <div className="flex items-center gap-2 text-sm text-zinc-300">
-                <Shield className="w-4 h-4 text-zinc-400" />
-                <span className="font-semibold" style={{ color: driver.teamColor }}>
-                  {driver.constructorName}
-                </span>
-                <span className="text-zinc-600">|</span>
-                <span className="text-zinc-400 font-mono text-xs">
-                  Chassis Association
-                </span>
+                  {driver.number && (
+                    <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-zinc-900/90 border border-zinc-800 text-zinc-200">
+                      PERMANENT CAR #{driver.number}
+                    </span>
+                  )}
+
+                  <span className="px-3 py-1 rounded-full text-xs font-medium bg-zinc-900/90 border border-zinc-800 text-zinc-300 flex items-center gap-1.5">
+                    <span className="text-base leading-none">{driver.flag}</span>
+                    <span>{driver.nationality}</span>
+                  </span>
+
+                  {driver.isCurrentGrid && (
+                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase bg-red-950/80 text-red-400 border border-red-800">
+                      ACTIVE 2024 GRID
+                    </span>
+                  )}
+
+                  {Boolean(driver.stats?.titles && driver.stats.titles > 0) && (
+                    <span className="px-2.5 py-0.5 rounded text-[10px] font-mono uppercase bg-amber-500/10 text-amber-400 border border-amber-500/30 font-bold flex items-center gap-1">
+                      <Trophy className="w-3 h-3" />
+                      {driver.stats.titles}x WORLD CHAMPION
+                    </span>
+                  )}
+                </div>
+
+                {/* Driver Full Name */}
+                <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">
+                  {driver.fullName}
+                </h1>
+
+                {/* Team Association */}
+                <div className="flex items-center gap-2 text-sm text-zinc-300">
+                  <Shield className="w-4 h-4 text-zinc-400" />
+                  <span className="font-semibold" style={{ color: driver.teamColor }}>
+                    {driver.constructorName}
+                  </span>
+                  <span className="text-zinc-600">|</span>
+                  <span className="text-zinc-400 font-mono text-xs">
+                    Chassis Association
+                  </span>
+                </div>
               </div>
             </div>
 

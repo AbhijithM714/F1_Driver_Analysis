@@ -531,21 +531,54 @@ function DriversContent() {
                       </div>
                     </div>
 
-                    {/* Driver Name & Nationality */}
-                    <div>
-                      <h3 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors tracking-tight">
-                        {driver.fullName}
-                      </h3>
-                      <div className="flex items-center gap-2 text-xs text-zinc-400 mt-1 font-sans">
-                        <span className="text-sm">{driver.flag}</span>
-                        <span>{driver.nationality}</span>
-                        {driver.age && (
-                          <>
-                            <span className="text-zinc-600">•</span>
-                            <span className="font-mono text-[11px] text-zinc-500">
-                              {driver.age}y
-                            </span>
-                          </>
+                    {/* Driver Portrait, Name & Nationality */}
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="text-lg font-bold text-white group-hover:text-red-400 transition-colors tracking-tight truncate">
+                          {driver.fullName}
+                        </h3>
+                        <div className="flex items-center gap-2 text-xs text-zinc-400 mt-1 font-sans">
+                          <span className="text-sm">{driver.flag}</span>
+                          <span className="truncate">{driver.nationality}</span>
+                          {driver.age && (
+                            <>
+                              <span className="text-zinc-600">•</span>
+                              <span className="font-mono text-[11px] text-zinc-500">
+                                {driver.age}y
+                              </span>
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Driver Portrait or Stylized Livery Badge */}
+                      <div
+                        className="relative w-14 h-14 rounded-2xl bg-zinc-900/90 border border-zinc-800 overflow-hidden shrink-0 flex items-center justify-center shadow-inner"
+                        style={{ borderColor: `${driver.teamColor}50` }}
+                      >
+                        <div
+                          className="absolute inset-0 opacity-20 pointer-events-none"
+                          style={{
+                            background: `radial-gradient(circle at top, ${driver.teamColor}, transparent 75%)`,
+                          }}
+                        />
+                        {driver.imageUrl ? (
+                          <img
+                            src={driver.imageUrl}
+                            alt={driver.fullName}
+                            loading="lazy"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).style.display = "none";
+                            }}
+                            className="relative z-10 w-full h-full object-cover object-top scale-110 group-hover:scale-125 transition-transform duration-300"
+                          />
+                        ) : (
+                          <span
+                            className="relative z-10 font-mono text-xs font-black tracking-tighter"
+                            style={{ color: driver.teamColor }}
+                          >
+                            {driver.number ? `#${driver.number}` : driver.code}
+                          </span>
                         )}
                       </div>
                     </div>

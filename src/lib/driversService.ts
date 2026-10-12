@@ -5,7 +5,7 @@
  * Replaces hardcoded grid maps with dataset-derived active roster and team assignments.
  */
 import { getDriverSummaries } from "@/services/driverAnalytics";
-import { getDataset } from "@/services/dataStore";
+import { getDataset, readJsonFile } from "@/services/dataStore";
 import { flagForNationality, NATIONALITY_FLAGS } from "./flags";
 import { getTeamColor } from "./f1Themes";
 import type { DriverRecord } from "./apiTypes";
@@ -32,6 +32,7 @@ function calculateAge(dobString: string | null): number | null {
 export function getValidatedDrivers(): DriverRecord[] {
   const ds = getDataset();
   const summaries = getDriverSummaries();
+  const driverImages = readJsonFile<Record<string, string>>("driver_images.json") || {};
 
   return summaries.map(({ driver, stats, titles, latestConstructorId, latestNumber, isActive, seasons }) => {
     const c = latestConstructorId ? ds.constructorById.get(latestConstructorId) : null;
@@ -50,6 +51,13 @@ export function getValidatedDrivers(): DriverRecord[] {
     const code = driver.code || driver.surname.substring(0, 3).toUpperCase() || "DRV";
     const age = calculateAge(driver.dob);
     const isModern = isActive || (stats.lastYear !== null && stats.lastYear >= 2010);
+
+    const refLower = driver.driverRef.toLowerCase();
+    const surnameLower = driver.surname.toLowerCase();
+    const imageUrl =
+      driverImages[refLower] ||
+      (isActive || isModern ? driverImages[surnameLower] : null) ||
+      null;
 
     return {
       driverId: driver.driverId,
@@ -77,6 +85,7 @@ export function getValidatedDrivers(): DriverRecord[] {
       firstYear: stats.firstYear,
       lastYear: stats.lastYear,
       seasons,
+      imageUrl,
     };
   });
 }

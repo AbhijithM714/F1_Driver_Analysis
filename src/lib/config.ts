@@ -15,7 +15,7 @@ export const APP_CONFIG = {
     process.env.APP_VERSION ||
     "1.0.0",
   baseUrl: (
-    process.env.NEXT_PUBLIC_BASE_URL || "https://f1-race-analytics.vercel.app"
+    process.env.NEXT_PUBLIC_BASE_URL || "https://f1-driver-analysis.vercel.app"
   ).replace(/\/$/, ""),
   apiUrl: process.env.NEXT_PUBLIC_API_URL || "/api",
   dataDirectory: process.env.DATA_DIRECTORY || "data",
@@ -25,7 +25,6 @@ export const APP_CONFIG = {
     "https://github.com/AbhijithM714/F1_Driver_Analysis",
   liveDemoUrl:
     process.env.NEXT_PUBLIC_LIVE_DEMO_URL ||
-    "https://f1-race-analytics.vercel.app",
+    "https://f1-driver-analysis.vercel.app/",
   license: "MIT",
 } as const;
-
