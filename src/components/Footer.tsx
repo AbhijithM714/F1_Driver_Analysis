@@ -108,8 +108,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li className="pt-1 text-[11px] font-mono text-zinc-500">
-                Author: <strong className="text-zinc-300">{APP_CONFIG.author}</strong> · License:{" "}
-                <strong className="text-zinc-300">{APP_CONFIG.license}</strong>
+                License: <strong className="text-zinc-300">{APP_CONFIG.license}</strong> · Build:{" "}
+                <strong className="text-zinc-300">v{APP_CONFIG.version}</strong>
               </li>
             </ul>
           </div>
@@ -117,7 +117,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-zinc-900 flex flex-col md:flex-row items-center justify-between gap-4 text-zinc-500 text-[11px]">
           <div>
-            © {currentYear} {APP_CONFIG.name} · Created by <strong className="text-zinc-300">{APP_CONFIG.author}</strong> · Released under the{" "}
+            © {currentYear} {APP_CONFIG.name} · Released under the{" "}
             <strong className="text-zinc-300">{APP_CONFIG.license} License</strong>. Formula 1 is a trademark of Formula One Licensing B.V.
           </div>
           <div className="font-mono text-zinc-400">

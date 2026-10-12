@@ -12,12 +12,11 @@ Configure the following environment variables in your hosting provider (or `.env
 |---|---|---|
 | `APP_NAME` | `Formula 1 Race Analytics Platform` | Server application title |
 | `APP_VERSION` | `1.0.0` | Release version tag |
-| `NEXT_PUBLIC_BASE_URL` | `https://f1-race-analytics.vercel.app` | Canonical public URL used for SEO, OpenGraph, and Sitemap |
+| `NEXT_PUBLIC_BASE_URL` | `https://f1-driver-analysis.vercel.app` | Canonical public URL used for SEO, OpenGraph, and Sitemap |
 | `NEXT_PUBLIC_API_URL` | `/api` | Base path for client API requests |
 | `DATA_DIRECTORY` | `data` | Directory containing CSV and GeoJSON datasets |
-| `NEXT_PUBLIC_AUTHOR_NAME` | `Abhijith` | Author attribution in Footer and metadata |
-| `NEXT_PUBLIC_GITHUB_URL` | `https://github.com/abhijith/f1-race-analytics-platform` | Public GitHub repository link |
-| `NEXT_PUBLIC_LIVE_DEMO_URL` | `https://f1-race-analytics.vercel.app` | Public live demo link |
+| `NEXT_PUBLIC_GITHUB_URL` | `https://github.com/AbhijithM714/F1_Driver_Analysis` | Public GitHub repository link |
+| `NEXT_PUBLIC_LIVE_DEMO_URL` | `https://f1-driver-analysis.vercel.app/` | Public live demo link |
 
 ---
 

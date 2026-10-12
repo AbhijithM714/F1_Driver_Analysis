@@ -421,18 +421,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 7. Author & Release Metadata */}
+        {/* 7. Release & Repository Metadata */}
         <section className="bg-zinc-950/90 border border-zinc-800/80 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div className="space-y-1.5">
             <div className="flex items-center gap-2 text-xs font-mono text-[#E10600] uppercase font-bold">
-              <User className="w-3.5 h-3.5" />
-              <span>Author & Academic Attribution</span>
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Production Release Metadata</span>
             </div>
             <h2 className="text-lg font-bold text-white">
-              Developed by {APP_CONFIG.author}
+              {APP_CONFIG.name} · v{APP_CONFIG.version}
             </h2>
             <p className="text-xs text-zinc-400 max-w-xl">
-              {APP_CONFIG.name} · Version {APP_CONFIG.version} (Production Release). Built as a full-stack software engineering & data analytics portfolio project.
+              Full-stack Formula 1 telemetry, race strategy, and historical data analytics platform released under the {APP_CONFIG.license} License.
             </p>
           </div>
 

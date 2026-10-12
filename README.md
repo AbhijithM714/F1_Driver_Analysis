@@ -357,8 +357,8 @@ All 16 core and supplementary datasets are pre-installed in `./data` and automat
 
 ---
 
-## 👨‍💻 Author
+## 🔗 Project Links
 
-**Abhijith**  
-- **Project**: Formula 1 Race Analytics Platform (Version 1.0.0)
-- **GitHub**: [https://github.com/AbhijithM714/F1_Driver_Analysis](https://github.com/AbhijithM714/F1_Driver_Analysis)
+- **Live Demo**: [https://f1-driver-analysis.vercel.app/](https://f1-driver-analysis.vercel.app/)
+- **GitHub Repository**: [https://github.com/AbhijithM714/F1_Driver_Analysis](https://github.com/AbhijithM714/F1_Driver_Analysis)
+
